@@ -1,0 +1,30 @@
+---
+version: '3'
+
+services:
+  survival:
+    container_name: survival
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        http_proxy: ${http_proxy}
+        https_proxy: ${https_proxy}
+    image: dceoy/r-jupyter:latest
+    user: ${UID}:${GID}
+    userns_mode: host
+    ports:
+      - 8888:8888
+    volumes:
+      - .:/wd
+    working_dir: /wd
+    entrypoint:
+      - jupyter
+    command:
+      - notebook
+      - --port=8888
+      - --ip=0.0.0.0
+      - --notebook-dir=/wd
+      - --allow-root
+      - --no-browser
+      - --NotebookApp.token=''
