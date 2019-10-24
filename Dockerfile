@@ -8,11 +8,11 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
-      && pip install -U lifelines
+      && pip install -U --no-cache-dir lifelines
 
 RUN set -e \
       && clir update \
-      && clir install glmnet survminer \
+      && clir install --devt=cran glmnet survminer \
       && clir validate glmnet survminer
 
 ENTRYPOINT ["/usr/bin/R"]
