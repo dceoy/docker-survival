@@ -3,13 +3,15 @@ docker-survival
 
 Dockerfile for survival analysis
 
+[![CI to Docker Hub](https://github.com/dceoy/docker-survival/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/dceoy/docker-survival/actions/workflows/docker-publish.yml)
+
 Docker image
 ------------
 
 Pull the image from [Docker Hub](https://hub.docker.com/r/dceoy/survival/).
 
 ```sh
-$ docker pull dceoy/survival
+$ docker image pull dceoy/survival
 ```
 
 Usage
